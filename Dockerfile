@@ -11,9 +11,16 @@
 # Set gid=0 and make group perms==owner perms
 ################################################################################
 
+## Buildx
+#  Build with on amd64
+# See https://www.docker.com/blog/getting-started-with-docker-for-arm-on-linux/ to know how to setup the muilbuild arch
+# docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3 # NEEDED to Build linux/arm/v7
+# docker buildx ls
+
 FROM centos:7 AS builder
 
-ENV VERSION 7.12.0
+ENV VERSION 7.0.1 
+# Was 7.7.1
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 ENV PATH /usr/share/elasticsearch/bin:$PATH
@@ -50,7 +57,7 @@ COPY config/log4j2.properties config/
 # Add entrypoint
 ################################################################################
 
-FROM debian
+FROM debian:buster
 
 ARG BUILD_DATE
 ARG VCS_REF

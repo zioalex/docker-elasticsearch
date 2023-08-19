@@ -5,3 +5,5 @@ xpack.license.self_generated.type: basic
 xpack.security.enabled: false
 xpack.monitoring.collection.enabled: false
 xpack.ml.enabled: false
+discovery.type: single-node
+path.repo: ["/var/backups"]
