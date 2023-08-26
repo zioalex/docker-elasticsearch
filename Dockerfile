@@ -16,10 +16,11 @@
 # See https://www.docker.com/blog/getting-started-with-docker-for-arm-on-linux/ to know how to setup the muilbuild arch
 # docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3 # NEEDED to Build linux/arm/v7
 # docker buildx ls
+# docker buildx build -t bigone.local:5000/efk-raspberrypi-elasticsearch:7.0.1 .
 
 FROM centos:7 AS builder
 
-ENV VERSION 7.0.1 
+ENV VERSION 7.7.1 
 # Was 7.7.1
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
