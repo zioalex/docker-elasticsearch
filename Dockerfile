@@ -19,7 +19,7 @@
 # docker buildx build -t bigone.local:5000/efk-raspberrypi-elasticsearch:7.0.1 .
 
 FROM centos:7 AS builder
-
+# Was 7.7.1
 ENV VERSION 7.12.0
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
