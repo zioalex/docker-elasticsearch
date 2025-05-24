@@ -20,8 +20,7 @@
 
 FROM centos:7 AS builder
 
-ENV VERSION 7.7.1 
-# Was 7.7.1
+ENV VERSION 7.12.0
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 ENV PATH /usr/share/elasticsearch/bin:$PATH
